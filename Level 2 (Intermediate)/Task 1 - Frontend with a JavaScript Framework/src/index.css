@@ -1,0 +1,494 @@
+:root {
+  /* --bg-dark: rgba(38, 38, 38, 1); */
+  --dark-bg: rgba(23, 23, 23, 1);
+  --light-bg: rgba(245, 245, 245, 1);
+
+  --dark-bg-solid: rgba(38, 38, 38, 1);
+
+  --dark-navbar-text: rgba(250, 250, 250, 1);
+  --dark-text: rgba(250, 250, 250, 1);
+  --dark-text-description: rgba(163, 163, 163, 1);
+
+  --dark-navbarBtnText: rgba(76, 29, 149, 1);
+  --dark-navbarBtnBg: rgba(221, 214, 254, 1);
+
+  --dark-navbarBtnBorderColor: rgba(115, 115, 115, 1);
+  --dark-navbarBtnBgColor: rgba(38, 38, 38, 1);
+
+  --mainFont: "Inter Tight", sans-serif;
+}
+body {
+  background: var(--dark-bg);
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  line-height: normal !important;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+/* Set core body defaults */
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Remove list styles */
+ol,
+ul {
+  list-style: none;
+}
+
+/* Remove quote styles */
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+/* Remove table border spacing */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Remove default button styles */
+button {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: none;
+}
+
+/* Remove default input styles */
+input,
+textarea,
+select {
+  font: inherit;
+  border: none;
+  outline: none;
+  background: none;
+}
+
+/* Remove default link styles */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Remove default image styles */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Remove default fieldset styles */
+fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Remove default legend styles */
+legend {
+  padding: 0;
+}
+
+/* Set default font family */
+html {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+/* Ensure proper box sizing for all elements */
+* {
+  box-sizing: border-box;
+}
+
+/* Remove focus outline for mouse users, keep for keyboard users */
+*:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Ensure proper focus styles for accessibility */
+*:focus-visible {
+  outline: 2px solid #007bff;
+  outline-offset: 2px;
+}
+
+/* Remove text selection on buttons and interactive elements */
+button,
+input,
+textarea,
+select {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Allow text selection on content areas */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span,
+div {
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+  .container {
+    max-width: 90vw;
+    padding: 0 16px;
+  }
+  .header .headerMain {
+    padding: 24px 0;
+  }
+  .mainMain .heroSection__content {
+    width: 90%;
+    font-size: 40px;
+  }
+  .mainMain .detailsSection {
+    flex-direction: column;
+    gap: 24px;
+    padding: 64px 0px;
+  }
+  .mainMain .popularCoursesSection__main {
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .mainMain .popularCoursesSection {
+    padding: 64px 0;
+  }
+  .mainMain .motivationTextSection {
+    padding: 80px 0;
+  }
+  .aboutSection__main .aboutSection {
+    padding: 80px 0;
+    gap: 80px;
+  }
+  .aboutSection__main .aboutSection__content {
+    gap: 48px;
+  }
+  .footer .footerMain {
+    padding: 50px 16px;
+    flex-direction: column;
+    gap: 40px;
+  }
+  .footer .footerRightSide {
+    gap: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    max-width: 100vw;
+    padding: 0 8px;
+  }
+  .header .headerMain {
+    padding: 16px 0;
+  }
+  .header .navbar .navLinks__ul {
+    gap: 0.5rem;
+  }
+  .mainMain .heroSection__content {
+    width: 100%;
+    font-size: 28px;
+    padding: 0 8px;
+  }
+  .mainMain .heroSection__content__header {
+    font-size: 36px;
+  }
+  .mainMain .heroSection__content__paragraph {
+    font-size: 16px;
+  }
+  .mainMain .detailsSection {
+    flex-direction: column;
+    gap: 16px;
+    padding: 32px 0px;
+  }
+  .mainMain .detailsSection__detail__content__header {
+    font-size: 24px;
+  }
+  .mainMain .detailsSection__detail__content__main {
+    font-size: 16px;
+  }
+  .mainMain .popularCoursesSection__main {
+    flex-direction: column;
+    gap: 16px;
+  }
+  .mainMain .popularCoursesSection {
+    padding: 32px 0;
+  }
+  .mainMain .popularCoursesSection__header h5 {
+    font-size: 24px;
+  }
+  .mainMain .popularCoursesSection__main__course__content__header {
+    font-size: 18px;
+  }
+  .mainMain .motivationTextSection {
+    padding: 40px 0;
+  }
+  .mainMain .motivationTextSection__content__header {
+    font-size: 24px;
+  }
+  .mainMain .motivationTextSection__content__paragraph {
+    font-size: 18px;
+  }
+  .aboutSection__main .aboutSection {
+    padding: 40px 0;
+    gap: 40px;
+  }
+  .aboutSection__main .aboutSection__content {
+    flex-direction: column;
+    gap: 24px;
+    align-items: flex-start;
+  }
+  .aboutSection__main .aboutSection__content__image img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+  }
+  .aboutSection__main .aboutSection__content__text__header {
+    font-size: 24px;
+  }
+  .aboutSection__main .aboutSection__content__text__body {
+    font-size: 16px;
+  }
+  .footer .footerMain {
+    padding: 24px 8px;
+    flex-direction: column;
+    gap: 24px;
+  }
+  .footer .footerRightSide {
+    flex-direction: column;
+    gap: 24px;
+  }
+  .footer .footerLinksMain {
+    gap: 16px;
+  }
+  .footer .footerLinksHeader {
+    font-size: 18px;
+  }
+  .footer .footerLinksBody .footerLinks .footerLink__a {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    max-width: 100vw;
+    padding: 0 4px;
+  }
+  .header .headerMain {
+    padding: 8px 0;
+  }
+  .header .navbar .logo {
+    font-size: 1rem;
+  }
+  .mainMain .heroSection__content {
+    width: 100%;
+    font-size: 18px;
+    padding: 0 4px;
+  }
+  .mainMain .heroSection__content__header {
+    font-size: 20px;
+  }
+  .mainMain .heroSection__content__paragraph {
+    font-size: 12px;
+  }
+  .mainMain .detailsSection {
+    padding: 16px 0px;
+  }
+  .mainMain .detailsSection__detail__content__header {
+    font-size: 16px;
+  }
+  .mainMain .detailsSection__detail__content__main {
+    font-size: 12px;
+  }
+  .mainMain .popularCoursesSection {
+    padding: 16px 0;
+  }
+  .mainMain .popularCoursesSection__header h5 {
+    font-size: 16px;
+  }
+  .mainMain .popularCoursesSection__main__course__content__header {
+    font-size: 14px;
+  }
+  .mainMain .motivationTextSection {
+    padding: 20px 0;
+  }
+  .mainMain .motivationTextSection__content__header {
+    font-size: 14px;
+  }
+  .mainMain .motivationTextSection__content__paragraph {
+    font-size: 10px;
+  }
+  .aboutSection__main .aboutSection {
+    padding: 20px 0;
+    gap: 20px;
+  }
+  .aboutSection__main .aboutSection__content {
+    gap: 12px;
+  }
+  .aboutSection__main .aboutSection__content__image img {
+    max-width: 180px;
+  }
+  .aboutSection__main .aboutSection__content__text__header {
+    font-size: 14px;
+  }
+  .aboutSection__main .aboutSection__content__text__body {
+    font-size: 10px;
+  }
+  .footer .footerMain {
+    padding: 8px 4px;
+    gap: 8px;
+  }
+  .footer .footerLinksHeader {
+    font-size: 12px;
+  }
+  .footer .footerLinksBody .footerLinks .footerLink__a {
+    font-size: 10px;
+  }
+}
